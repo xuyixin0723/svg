@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
+import {selectComp} from '../actions';
 
 // import {toggleTodo, removeTodo} from '../actions.js';
 
@@ -11,17 +12,21 @@ const Comp = ({
   height,
   name,
   id,
-  result
+  result,
+  color,
+  onSelect
 }) => {
   return (<rect
     x={x}
     y={y}
     width={width}
     height={height}
-    fill="#1e73e7"
-    fillOpacity={0.3}
-    stroke="#1e73e7"
-    strokeWidth={1}/>);
+    fill={color}
+    fillOpacity={0.5}
+    stroke={color}
+    strokeWidth={1}
+    onClick = {onSelect}
+    />);
 };
 
 Comp.propTypes = {
@@ -29,6 +34,7 @@ Comp.propTypes = {
   y: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
+  onSelect: PropTypes.func.isRequired,
   // 记得试一下增加写传入属性回如何   onToggle: PropTypes.func.isRequired,   onRemove:
   // PropTypes.func.isRequired,   completed: PropTypes.bool.isRequired,   text:
   // PropTypes.string.isRequired
@@ -39,4 +45,11 @@ Comp.propTypes = {
 //   return {     onToggle: () => dispatch(toggleTodo(id)),     onRemove: () =>
 // dispatch(removeTodo(id))   } };
 
-export default connect(null, null)(Comp);
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const {id} = ownProps; //解构赋值
+  return {
+    onSelect: () => dispatch(selectComp(id)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Comp);

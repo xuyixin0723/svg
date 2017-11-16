@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
 
 import Comp from './comp';
-
+import {viewWidth,viewHeight} from '../constant'
 
 class CompsView extends React.Component {
   constructor(props, context) {
@@ -19,20 +19,21 @@ class CompsView extends React.Component {
     return (
       <div>
         <button onClick={event => this.Viewer.zoomOnViewerCenter(1.1)}>Zoom in</button>
-        <button onClick={event => this.Viewer.fitSelection(40, 40, 200, 200)}>Zoom area</button>
+        <button onClick={event => this.Viewer.fitSelection(0, 0, viewWidth, viewHeight)}>Zoom area</button>
         <button onClick={event => this.Viewer.fitToViewer()}>Fit</button>
 
         <hr/>
 
         <ReactSVGPanZoom
           style={{border: "1px solid black"}}
-          width={500} height={500} ref={Viewer => this.Viewer = Viewer}
+          width={viewWidth} height={viewHeight} ref={Viewer => this.Viewer = Viewer}
           onClick={event => console.log('click', event.x, event.y, event.originalEvent)}
+          onDoubleClick = {()=>{this.Viewer.fitToViewer()}}
           onMouseUp={event => console.log('up', event.x, event.y)}
           onMouseMove={event => console.log('move', event.x, event.y)}
           onMouseDown={event => console.log('down', event.x, event.y)}>
 
-          <svg width={900} height={800}>
+          <svg width={viewWidth} height={viewHeight}>
             {comps.map((comp) => (
                 <Comp
                     key={comp.id}
@@ -43,6 +44,7 @@ class CompsView extends React.Component {
                     width={comp.width}
                     height={comp.height}
                     result={comp.result}
+                    color = {comp.color}
                 />
                 ))
             }

@@ -1,1 +1,2 @@
 export const CREATE_COMPS = 'PCBVIEW/GET_COMPS';
+export const SELECT_COMP = 'PCBVIEW/SELECT_COMP';
