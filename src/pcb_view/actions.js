@@ -7,15 +7,14 @@ import {unselectedColor,viewWidth, viewHeight} from './constant'
 export const createComps = (compCnt) => {
     let arr = [];
     let comp = {};
-    let nextCompId = 0;
     for (let i = 0; i < compCnt; i++)
     {
         comp = {
             x: parseInt(Math.random()*(viewWidth-10),0),
             y: parseInt(Math.random()*(viewHeight-10),0),
-            width: parseInt(Math.random()*10,0),
-            height: parseInt(Math.random()*10,0),
-            id: nextCompId++,
+            width: 10,
+            height:10,
+            id: i,
             name: "component" + i,
             result: (Math.random()>0.2)?ResultTypes.OK:((Math.random()>0.1)?ResultTypes.NG:ResultTypes.FC),
             color: unselectedColor

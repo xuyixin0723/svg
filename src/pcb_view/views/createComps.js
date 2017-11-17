@@ -39,7 +39,7 @@ class CreateComps extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <input onChange={this.onInputChange} value={this.state.value} />
+          <input type="number" onChange={this.onInputChange} value={this.state.value} />
           <button type="submit" disabled={this.isCreateCompsDisabled}>
             生成元器件数据
           </button>
