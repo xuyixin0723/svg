@@ -48,7 +48,8 @@ class CompsView extends React.Component {
               width={comp.width}
               height={comp.height}
               result={comp.result}
-              color={comp.color}/>))
+              stroke={comp.stroke}
+              fill={comp.fill}/>))
             }
           </svg>
         </ReactSVGPanZoom>

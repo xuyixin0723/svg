@@ -2,7 +2,7 @@
 import {createStore, combineReducers} from 'redux';
 import {reducer as pcbViewReducer} from './pcb_view';
 import {reducer as filterReducer} from './filter';
-// import {ResultTypes} from './constant'
+import {ResultTypes} from './constant'
 
 const reducer = combineReducers({comps: pcbViewReducer, filters: filterReducer});
 
@@ -11,14 +11,15 @@ const reducer = combineReducers({comps: pcbViewReducer, filters: filterReducer})
 // storeEnhancers = compose(   applyMiddleware(...middlewares),   (win &&
 // win.devToolsExtension) ? win.devToolsExtension() : (f) => f, );
 
-// const initFilters = {};
-// initFilters[ResultTypes.OK] = false;
-// initFilters[ResultTypes.NG] = true;
-// initFilters[ResultTypes.FC] = true;
+const initFilters = {};
+initFilters[ResultTypes.OK] = false;
+initFilters[ResultTypes.NG] = true;
+initFilters[ResultTypes.FC] = true;
 
-// const initState = {
-//     filters: initFilters,
-// }
+const initState = {
+    comps: [],
+    filters: initFilters,
+}
 
 
-export default createStore(reducer, {});
+export default createStore(reducer, initState);

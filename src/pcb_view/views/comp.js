@@ -13,7 +13,8 @@ const Comp = ({
   name,
   id,
   result,
-  color,
+  stroke,
+  fill,
   onSelect
 }) => {
   return (<rect
@@ -21,10 +22,10 @@ const Comp = ({
     y={y}
     width={width}
     height={height}
-    fill={color}
-    fillOpacity={0.5}
-    stroke={color}
-    strokeWidth={1}
+    fill={fill}
+    fillOpacity={0.7}
+    stroke={stroke}
+    strokeWidth={2}
     onClick = {onSelect}
     />);
 };

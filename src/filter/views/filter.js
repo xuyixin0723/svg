@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import {ResultTypes} from '../../constant';
 import {toggleOK,toggleNG,toggleFC} from '../actions';
 
@@ -16,8 +16,11 @@ const Filter = ({filters, onToggleOK, onToggleNG, onToggleFC}) => {
     )
 }
 
-// Filter.propTypes = {     onToggleOK: PropTypes.func.isRequireds, onToggleNG:
-// PropTypes.func.isRequireds,     onToggleFC: PropTypes.func.isRequireds }
+Filter.propTypes = {     
+    onToggleOK: PropTypes.func.isRequireds, 
+    onToggleNG: PropTypes.func.isRequireds,     
+    onToggleFC: PropTypes.func.isRequireds 
+}
 
 const mapStateToProps = (state) => {
     return {filters: state.filters}
