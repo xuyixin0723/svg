@@ -51,6 +51,13 @@ class CompsView extends React.Component {
           onMouseDown={event => console.log('down', event.x, event.y)}>
 
           <svg width={viewWidth} height={viewHeight}>
+            <image 
+              x="0" 
+              y="0" 
+              width={viewWidth} 
+              height={viewHeight} 
+              href="https://note.youdao.com/yws/public/resource/f84c5ba7fa541b58fdc4e649fe421896/xmlnote/WEBRESOURCEaa890d9df46d4e3a8f4b1a2717e19b44/17737" 
+            />
             {comps.map((comp) => (<Comp
               key={comp.id}
               id={comp.id}
