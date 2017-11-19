@@ -15,6 +15,7 @@ export const createComps = (compCnt) => {
             id: i,
             name: "component" + i,
             stroke: unselectedColor,
+            isSelected: false,
             result: (Math.random() > 0.3)
                 ? ResultTypes.OK
                 : ((Math.random() > 0.2)

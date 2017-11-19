@@ -1,7 +1,7 @@
 export const ResultTypes = {
-  OK: 'a',
-  NG: 'b',
-  FC: 'c'
+  OK: '良好',
+  NG: '不良',
+  FC: '误报'
 }
 
 

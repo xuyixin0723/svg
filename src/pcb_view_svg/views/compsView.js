@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
 
 import Comp from './comp';
+import Info from './info';
 import {viewWidth, viewHeight} from '../constant';
 import {ResultTypes} from '../../constant';
 
@@ -19,6 +20,17 @@ class CompsView extends React.Component {
   }
   render() {
     const {comps} = this.props; //解构赋值
+    let [name,x,y,width,height,result] = ["","","","","",""];
+    let rtn = comps.filter(comp=>comp.isSelected===true);
+    if(rtn.length > 0)
+    {
+      name= rtn[0].name;
+      x=rtn[0].x;
+      y=rtn[0].y;
+      width=rtn[0].width;
+      height=rtn[0].height;
+      result=rtn[0].result;
+    } // 当前Info组件的这种显示方法好不好，如果不好，说出理由并改进
     return (
       <div>
         {/*<button onClick={event => this.Viewer.zoomOnViewerCenter(1.1)}>Zoom in</button>
@@ -53,6 +65,8 @@ class CompsView extends React.Component {
             }
           </svg>
         </ReactSVGPanZoom>
+        <hr/>
+        <Info name={name} x={x} y={y} width={width} height={height} result={result} /> 
       </div>
     );
   }

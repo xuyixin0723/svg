@@ -1,6 +1,6 @@
 // import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import {createStore, combineReducers} from 'redux';
-import {reducer as pcbViewReducer} from './pcb_view';
+import {reducer as pcbViewReducer} from './pcb_view_svg';
 import {reducer as filterReducer} from './filter';
 import {ResultTypes} from './constant'
 

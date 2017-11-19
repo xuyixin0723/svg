@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import {createComps} from '../actions.js';
 
 class CreateComps extends Component { 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onInputChange = this.onInputChange.bind(this);
@@ -19,7 +19,6 @@ class CreateComps extends Component {
 
   onSubmit(ev) {
     ev.preventDefault();
-
     const compCnt = parseInt(this.state.value,0);
     if (compCnt<1) {
      return;

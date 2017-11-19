@@ -1,2 +1,0 @@
-export const CREATE_COMPS = 'PCBVIEW/CREATE_COMPS';
-export const SELECT_COMP = 'PCBVIEW/SELECT_COMP';

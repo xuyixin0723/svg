@@ -21,14 +21,16 @@ export default(comps=[], action) => { // 这个组件state就是代指store中st
                         lastSelectedID = comp.id;
                         return {
                             ...comp,
-                            stroke: selectedColor
+                            stroke: selectedColor,
+                            isSelected: true
                         };
                     }
                     if(comp.id === resetID)
                     {
                         return {
                             ...comp,
-                            stroke: unselectedColor
+                            stroke: unselectedColor,
+                            isSelected: false
                         };
                     }
                     return comp;
