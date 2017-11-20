@@ -8,6 +8,8 @@ import Info from './info';
 import {viewWidth, viewHeight} from '../constant';
 import {ResultTypes} from '../../constant';
 
+import pcbImage from '../../pcb.jpeg'
+
 class CompsView extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -51,12 +53,12 @@ class CompsView extends React.Component {
           onMouseDown={event => console.log('down', event.x, event.y)}>
 
           <svg width={viewWidth} height={viewHeight}>
-            <image 
+            <image
               x="0" 
               y="0" 
               width={viewWidth} 
-              height={viewHeight} 
-              href="https://note.youdao.com/yws/public/resource/f84c5ba7fa541b58fdc4e649fe421896/xmlnote/WEBRESOURCEaa890d9df46d4e3a8f4b1a2717e19b44/17737" 
+              height={viewHeight}
+              xlinkHref={pcbImage}
             />
             {comps.map((comp) => (<Comp
               key={comp.id}

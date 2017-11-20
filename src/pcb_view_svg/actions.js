@@ -1,6 +1,6 @@
 import {CREATE_COMPS, SELECT_COMP} from './actionTypes';
-import {ResultTypes} from '../constant'
-import {unselectedColor, viewWidth, viewHeight, okColor, ngColor, fcColor} from './constant'
+import {ResultTypes,okColor,ngColor,fcColor} from '../constant'
+import {unselectedColor, viewWidth, viewHeight} from './constant'
 
 // 切记，一定要有#号，前端最恶心的就是它不会报错，不打#只是使用默认颜色，一切照常, 但这会导致以为mapStateToProps没有发生作用
 export const createComps = (compCnt) => {

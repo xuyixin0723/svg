@@ -1,0 +1,14 @@
+.filter{
+    margin:100px
+  }
+  
+.pcbView {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+  
+.charts{
+      position: absolute;
+      margin: 600 2000 50 50px;
+    }

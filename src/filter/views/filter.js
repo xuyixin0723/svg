@@ -3,10 +3,11 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types'
 import {ResultTypes} from '../../constant';
 import {toggleOK,toggleNG,toggleFC} from '../actions';
+import './style.css'
 
 const Filter = ({filters, onToggleOK, onToggleNG, onToggleFC}) => {
     return (
-        <div>
+        <div className="filterStyle">
             <form>
                 <input type="checkbox" onChange={onToggleOK} checked={filters[ResultTypes.OK]}/>Show OK
                 <input type="checkbox" onChange={onToggleNG} checked={filters[ResultTypes.NG]}/>Show NG
